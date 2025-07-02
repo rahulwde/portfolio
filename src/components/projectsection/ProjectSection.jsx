@@ -30,7 +30,7 @@ const projects = [
     description: "A responsive booking platform for athletic competitions. Users can register for events, track schedules, and view their personal bookings. Includes admin event management.",
     image:project3 ,
     tags: ["React", "Firebase", "MongoDB", "Express.js", "Node.js", "Tailwind", "React Router"],
-    demoUrl: "https://athletice-auth.web.app/",
+    demoUrl: "https://athletic-event.netlify.app/",
     githubUrl: "https://github.com/rahulwde/athletices"
   }
 ];
