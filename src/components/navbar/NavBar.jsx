@@ -75,21 +75,51 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Nav */}
-      {menuOpen && (
-        <div className="block md:hidden mt-4">
-          <GooeyNav items={items} activeItem={activeSection} />
-          <div className="mt-4 flex justify-center">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black px-4 py-2 rounded-full font-semibold shadow hover:bg-cyan-400 transition"
-            >
-              Resume
-            </a>
-          </div>
-        </div>
-      )}
+    {/* Mobile Sidebar */}
+<div
+  className={`fixed top-0 right-0 h-full w-64 bg-[#0f172a] z-50 transform transition-transform duration-300 ease-in-out ${
+    menuOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
+  {/* Close Button */}
+  <div className="flex justify-end p-4">
+    <button
+      onClick={() => setMenuOpen(false)}
+      className="text-white text-2xl"
+    >
+      ✕
+    </button>
+  </div>
+
+  {/* Nav Items */}
+  <div className="flex flex-col items-start space-y-4 px-6">
+    {items.map((item) => (
+      <a
+        key={item.href}
+        href={item.href}
+        className={`text-lg font-semibold ${
+          activeSection === item.href.replace("#", "")
+            ? "text-cyan-400"
+            : "text-white"
+        }`}
+        onClick={() => setMenuOpen(false)}
+      >
+        {item.label}
+      </a>
+    ))}
+
+    {/* Resume Button */}
+    <a
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white text-black px-4 py-2 rounded-full font-semibold shadow hover:bg-cyan-400 transition"
+    >
+      Resume
+    </a>
+  </div>
+</div>
+
     </div>
   );
 };

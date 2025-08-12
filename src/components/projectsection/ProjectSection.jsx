@@ -19,7 +19,7 @@ const projects = [
     id: 2,
     title: "Event Explorer – Discover Local Events",
     description: "A city-based event discovery app where users can browse upcoming events, book seats, and get location-based suggestions. Includes organizer dashboard and protected routes.",
-    image:project2 ,
+    image:project3,
     tags: ["React", "Firebase Auth", "Tailwind", "Swiper.js", "MERN"],
     demoUrl: "https://event-auth-52e62.web.app/",
     githubUrl: "https://github.com/rahulwde/Event"
@@ -28,7 +28,7 @@ const projects = [
     id: 3,
     title: "Athletics Booking Platform",
     description: "A responsive booking platform for athletic competitions. Users can register for events, track schedules, and view their personal bookings. Includes admin event management.",
-    image:project3 ,
+    image:project2  ,
     tags: ["React", "Firebase", "MongoDB", "Express.js", "Node.js", "Tailwind", "React Router"],
     demoUrl: "https://athletic-event.netlify.app/",
     githubUrl: "https://github.com/rahulwde/athletices"

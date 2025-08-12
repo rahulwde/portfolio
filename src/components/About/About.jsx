@@ -1,5 +1,8 @@
 import React from 'react';
 import aboutImg from '../../assets/portfolio.jpg'; 
+import Typewriter from "typewriter-effect";
+import styled from "styled-components";
+
 
 const About = () => {
   return (
@@ -8,21 +11,34 @@ const About = () => {
       className="flex flex-col md:flex-row items-center  justify-around px-4 py-12 bg-[#0f172a] text-gray-200"
     >
       {/* Left Side Image */}
-      <div className="mb-6 md:mb-0">
-        <img
-          src={aboutImg}
-          alt="Rahul Mondol"
-          className="w-[300px] h-[300px] object-cover rounded-lg shadow-lg border-4 border-cyan-500"
-        />
+    <StyledWrapper>
+      <div className="parent">
+        <div className="card">
+          <img src={aboutImg} alt="Rahul Mondol" className="profile-image" />
+        </div>
       </div>
-
+    </StyledWrapper>
+  
       {/* Right Side Text */}
       <div className="max-w-xl text-center md:text-left space-y-4">
         <h2 className="text-3xl font-bold text-cyan-400">About Me</h2>
         <p className="text-gray-300 leading-relaxed">
           I am <span className="font-semibold text-white">Rahul Mondol</span>, a passionate{" "}
-          <span className="text-cyan-300 font-medium">Frontend</span> and{" "}
-          <span className="text-cyan-300 font-medium">MERN Stack Developer</span> from Bangladesh.
+           <h1 style={{ fontSize: "28px", fontWeight: "bold" }}>
+      <Typewriter
+        options={{
+          strings: [
+            "Frontend Developer",
+            "MERN Stack Developer",
+            "Fullstack Developer",
+          ],
+          autoStart: true,
+          loop: true,
+          delay: 75, // typing speed
+          deleteSpeed: 50, // delete speed
+        }}
+      />
+    </h1>
           My dream is to become a skilled <span className="text-cyan-300 font-medium">Software Engineer</span>.
         </p>
         <p className="text-gray-400 leading-relaxed">
@@ -37,5 +53,32 @@ const About = () => {
     </div>
   );
 };
+const StyledWrapper = styled.div`
+  .parent {
+    width: 300px;
+    padding: 20px;
+    perspective: 1000px; /* Enables 3D effect */
+  }
 
+  .card {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  }
+
+  .card:hover {
+    transform: rotate3d(0.5, 1, 0, 20deg) scale(1.05);
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+`;
 export default About;
